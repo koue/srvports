@@ -24,6 +24,7 @@ FILES="
 	Mk/Scripts/do-patch.sh
 	Mk/Scripts/depends-list.sh
 	Mk/Scripts/check-stagedir.sh
+	Mk/Scripts/plist_sub_sed_sort.sh
 	Templates/BSD.local.dist
 "
 ###
