@@ -14,6 +14,8 @@ USES=		gmake tar:xz
 
 GNU_CONFIGURE=	yes
 
+MAKE_ARGS=	NO_PERL=yes NO_GITWEB=yes
+
 CONFIGURE_ARGS=	--enable-pthreads=-pthread \
 		--without-openssl \
 		--without-expat \
