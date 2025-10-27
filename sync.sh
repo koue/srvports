@@ -22,6 +22,7 @@ FILES="
 	Mk/Scripts/checksum.sh
 	Mk/Scripts/makesum.sh
 	Mk/Scripts/do-patch.sh
+	Mk/Scripts/depends-list.sh
 	Templates/BSD.local.dist
 "
 ###
