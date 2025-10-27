@@ -23,6 +23,7 @@ FILES="
 	Mk/Scripts/makesum.sh
 	Mk/Scripts/do-patch.sh
 	Mk/Scripts/depends-list.sh
+	Mk/Scripts/check-stagedir.sh
 	Templates/BSD.local.dist
 "
 ###
