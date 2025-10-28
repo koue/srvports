@@ -30,6 +30,7 @@ FILES="
 	Mk/Scripts/security-check.awk
 	Mk/Scripts/find-lib.sh
 	Templates/BSD.local.dist
+	Templates/config.guess
 "
 ###
 myfetch() {
