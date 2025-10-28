@@ -28,6 +28,7 @@ FILES="
 	Mk/Scripts/create-manifest.sh
 	Mk/Scripts/actual-package-depends.sh
 	Mk/Scripts/security-check.awk
+	Mk/Scripts/find-lib.sh
 	Templates/BSD.local.dist
 "
 ###
