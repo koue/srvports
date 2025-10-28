@@ -1,5 +1,6 @@
 PORTNAME=	git
 DISTVERSION=	2.51.1
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	KERNEL_ORG/software/scm/git
 
@@ -14,7 +15,7 @@ USES=		gmake tar:xz
 
 GNU_CONFIGURE=	yes
 
-MAKE_ARGS=	NO_PERL=yes NO_GITWEB=yes
+MAKE_ARGS=	NO_PERL=yes NO_GITWEB=yes NO_GETTEXT=yes
 
 CONFIGURE_ARGS=	--enable-pthreads=-pthread \
 		--without-openssl \
