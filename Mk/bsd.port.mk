@@ -1004,7 +1004,7 @@ _LIST_OF_WITH_FEATURES=	bind_now debug debuginfo fortify lto pie relro \
 			sanitize ssp stack_autoinit testing zeroregs
 _DEFAULT_WITH_FEATURES=	ssp
 PORTSDIR?=		/usr/ports
-LOCALBASE?=		/usr/local
+LOCALBASE?=		/srv
 LINUXBASE?=		/compat/linux
 DISTDIR?=		${PORTSDIR}/distfiles
 _DISTDIR?=		${DISTDIR}${empty(DIST_SUBDIR):?:${DIST_SUBDIR:D/${DIST_SUBDIR}}}
@@ -1381,7 +1381,7 @@ FILESDIR?=		${MASTERDIR}/files
 SCRIPTDIR?=		${MASTERDIR}/scripts
 PKGDIR?=		${MASTERDIR}
 
-PREFIX?=		/srv
+PREFIX?=		${LOCALBASE}
 
 PKGCOMPATDIR?=		${LOCALBASE}/lib/compat/pkg
 

@@ -33,7 +33,7 @@ DIALOG?=		/usr/bin/dialog
 .  else
 DIALOG?=		/usr/bin/bsddialog
 .  endif
-DIALOG4PORTS?=		${LOCALBASE}/bin/portconfig
+DIALOG4PORTS?=		/usr/local/bin/portconfig
 DIFF?=			/usr/bin/diff
 DIRNAME?=		/usr/bin/dirname
 EGREP?=			/usr/bin/egrep
@@ -45,7 +45,7 @@ FIND?=			/usr/bin/find
 FLEX?=			/usr/bin/flex
 FMT?=			/usr/bin/fmt
 FMT_80?=		${FMT} 75 79
-GMAKE?=			${LOCALBASE}/bin/gmake
+GMAKE?=			/usr/local/bin/gmake
 GREP?=			/usr/bin/grep
 GUNZIP_CMD?=		/usr/bin/gunzip -f
 GZCAT?=			/usr/bin/gzcat
@@ -99,7 +99,7 @@ TRUE?=			true	# Shell builtin
 UMOUNT?=		/sbin/umount
 UNAME?=			/usr/bin/uname
 UNMAKESELF_CMD?=	${LOCALBASE}/bin/unmakeself
-UNZIP_CMD?=		${LOCALBASE}/bin/unzip
+UNZIP_CMD?=		/usr/local/bin/unzip
 UNZIP_NATIVE_CMD?=	/usr/bin/unzip
 WHICH?=			/usr/bin/which
 XARGS?=			/usr/bin/xargs
@@ -124,7 +124,7 @@ ECHO_MSG?=		${ECHO_CMD}
 
 .elif !defined(_PKGTOOLSDEFINED)
 _PKGTOOLSDEFINED=	yes
-PKG_BIN?=		${LOCALBASE}/sbin/pkg-static
+PKG_BIN?=		/usr/local/sbin/pkg-static
 PKG_REGISTER?=		${PKG_BIN} register
 PKG_DELETE?=		${PKG_BIN} delete -y
 PKG_INFO?=		${PKG_BIN} info -g

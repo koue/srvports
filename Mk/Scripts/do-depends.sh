@@ -73,6 +73,13 @@ find_file()
 		echo "===>   ${dp_PKGNAME} depends on file: $1 - found"
 		return 0
 	fi
+	### srvports
+	srvbase=`echo "$1" | sed 's|/srv/|/usr/local/|'`
+	if [ -e "$srvbase" ]; then
+		echo "===>   ${dp_PKGNAME} depends on file: $srvbase - found"
+		return 0
+	fi
+	###
 	echo "===>   ${dp_PKGNAME} depends on file: $1 - not found"
 	return 1
 }
