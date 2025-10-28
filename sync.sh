@@ -31,6 +31,7 @@ FILES="
 	Mk/Scripts/find-lib.sh
 	Templates/BSD.local.dist
 	Templates/config.guess
+	Templates/config.sub
 "
 ###
 myfetch() {
