@@ -27,6 +27,7 @@ FILES="
 	Mk/Scripts/plist_sub_sed_sort.sh
 	Mk/Scripts/create-manifest.sh
 	Mk/Scripts/actual-package-depends.sh
+	Mk/Scripts/security-check.awk
 	Templates/BSD.local.dist
 "
 ###
