@@ -1,0 +1,9 @@
+bin/graffer
+%%ETCDIR%%/conf.d/10-cpu-mem.conf
+%%ETCDIR%%/conf.d/20-disk-proc.conf
+%%ETCDIR%%/conf.d/30-states.conf
+%%ETCDIR%%/conf.d/40-source-conn.conf
+%%ETCDIR%%/conf.d/50-tcp-udp.conf
+%%ETCDIR%%/conf.d/60-net.conf
+%%ETCDIR%%/graffer.conf.example
+share/man/man8/graffer.8.gz

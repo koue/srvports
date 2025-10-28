@@ -74,7 +74,7 @@ find_file()
 		return 0
 	fi
 	### srvports
-	srvbase=`echo "$1" | sed 's|/srv/|/usr/local/|'`
+	srvbase=$(echo "$1" | sed 's|/srv/|/usr/local/|')
 	if [ -e "$srvbase" ]; then
 		echo "===>   ${dp_PKGNAME} depends on file: $srvbase - found"
 		return 0
