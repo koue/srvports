@@ -1,5 +1,6 @@
 PORTNAME=	mutt
 DISTVERSION=	2.2.15
+PORTREVISION=	1
 CATEGORIES+=	mail
 MASTER_SITES=	ftp://ftp.mutt.org/pub/mutt/ \
 		https://bitbucket.org/mutt/mutt/downloads/
@@ -22,6 +23,7 @@ CONFIGURE_ARGS=	--disable-fcntl \
 		--without-ssl \
 		--without-gnutls \
 		--without-sasl \
-		--disable-full-doc
+		--disable-full-doc \
+		--enable-external-dotlock
 
 .include <bsd.port.mk>
