@@ -29,6 +29,7 @@ FILES="
 	Mk/Scripts/actual-package-depends.sh
 	Mk/Scripts/security-check.awk
 	Mk/Scripts/find-lib.sh
+	Mk/Scripts/do-users-groups.sh
 	Templates/BSD.local.dist
 	Templates/config.guess
 	Templates/config.sub
