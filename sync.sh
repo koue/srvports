@@ -33,6 +33,8 @@ FILES="
 	Templates/BSD.local.dist
 	Templates/config.guess
 	Templates/config.sub
+	GIDs
+	UIDs
 "
 ###
 myfetch() {
