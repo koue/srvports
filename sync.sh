@@ -15,6 +15,7 @@ FILES="
 	Mk/Features/ssp.mk
 	Mk/Uses/gmake.mk
 	Mk/Uses/tar.mk
+	Mk/Uses/uidfix.mk
 	Mk/Scripts/check-vulnerable.sh
 	Mk/Scripts/do-depends.sh
 	Mk/Scripts/functions.sh
