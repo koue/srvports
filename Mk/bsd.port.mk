@@ -1012,8 +1012,7 @@ INDEXDIR?=		${PORTSDIR}
 SRC_BASE?=		/usr/src
 USESDIR?=		${PORTSDIR}/Mk/Uses
 SCRIPTSDIR?=	${PORTSDIR}/Mk/Scripts
-### srvports
-LIB_DIRS?=		/lib /usr/lib /usr/local/lib ${LOCALBASE}/lib
+LIB_DIRS?=		/lib /usr/lib ${LOCALBASE}/lib
 ###
 STAGEDIR?=	${WRKDIR}/stage
 NOTPHONY?=
@@ -1773,11 +1772,6 @@ PLIST_SUB_SED?= ${PLIST_SUB_SED_tmp3:C/([^=]*)="?([^"]*)"?/s!\2!%%\1%%!g;/g:C/\.
 # kludge to strip trailing whitespace from CFLAGS;
 # sub-configure will not # survive double space
 CFLAGS:=	${CFLAGS:C/ $//}
-
-### srvports
-CFLAGS+=	-I/usr/local/include
-LDFLAGS+=	-L/usr/local/lib
-###
 
 .    if defined(WITHOUT_CPU_CFLAGS)
 .      if defined(_CPUCFLAGS)

@@ -1,5 +1,6 @@
 PORTNAME=	graffer
 PORTVERSION=	1.5.1
+PORTREVISION=	1
 CATEGORIES=	sysutils
 
 MAINTAINER=	koue@chaosophia.net
@@ -11,6 +12,9 @@ GH_ACCOUNT=	koue
 GH_PROJECT=	graffer
 
 LIB_DEPENDS=	libpng.so:graphics/png
+LIB_DIRS+=	/usr/local/lib
+CFLAGS+=	-I/usr/local/include
+LDFLAGS+=	-L/usr/local/lib
 
 post-patch:
 	@${REINPLACE_CMD} -e "s|/etc/|${PREFIX}/etc/|" \
@@ -23,6 +27,7 @@ do-install:
 	${INSTALL_MAN} ${WRKSRC}/src/graffer.8 ${STAGEDIR}${PREFIX}/share/man/man8
 	@${MKDIR} ${STAGEDIR}${PREFIX}/etc/graffer
 	${INSTALL_DATA} ${WRKSRC}/etc/graffer.conf.example ${STAGEDIR}${PREFIX}/etc/graffer
-	cd ${WRKSRC}/etc && ${COPYTREE_SHARE} conf.d ${STAGEDIR}${PREFIX}/etc/graffer
+	@${MKDIR} ${STAGEDIR}${PREFIX}/etc/graffer/conf.d.example
+	cd ${WRKSRC}/etc/conf.d && ${COPYTREE_SHARE} . ${STAGEDIR}${PREFIX}/etc/graffer/conf.d.example
 
 .include <bsd.port.mk>
