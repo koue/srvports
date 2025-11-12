@@ -34,6 +34,7 @@ FILES="
 	Templates/BSD.local.dist
 	Templates/config.guess
 	Templates/config.sub
+	Keywords/sample.ucl
 	GIDs
 	UIDs
 "
