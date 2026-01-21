@@ -1,5 +1,5 @@
 PORTNAME=	obhttpd
-DISTVERSION=	7.8.20251013
+DISTVERSION=	7.8.20260121
 CATEGORIES=	www
 MASTER_SITES=	OPENBSD/LibreSSL:libressl
 DISTFILES=	libressl-${SSL}.tar.gz:libressl
@@ -28,7 +28,8 @@ MAKE_ARGS+=	MANDIR=${PREFIX}/share/man/man
 MAKE_ARGS+=	WITHOUT_PIE=true \
 		SSLDIR=${WRKDIR}/libressl-${SSL} \
 		EVENTDIR=${WRKSRC_libevent} \
-		IMSGDIR=${WRKSRC_libimsg}
+		IMSGDIR=${WRKSRC_libimsg} \
+		-DUSE_BLACKLIST
 
 CFLAGS+=	-Wall -fcommon
 
