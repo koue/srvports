@@ -1,5 +1,5 @@
 PORTNAME=	obhttpd
-DISTVERSION=	7.8.20260121
+DISTVERSION=	7.8.20260205
 CATEGORIES=	www
 MASTER_SITES=	OPENBSD/LibreSSL:libressl
 DISTFILES=	libressl-${SSL}.tar.gz:libressl
@@ -54,7 +54,7 @@ post-patch:
 	${REINPLACE_CMD} -e 's|/etc/httpd.conf|${PREFIX}/etc/obhttpd.conf|g' \
 		${WRKSRC}/src/usr.sbin/httpd/httpd.h
 
-pre-configure:
+post-extract:
 	@(cd ${WRKDIR} && ${EXTRACT_CMD} ${EXTRACT_BEFORE_ARGS} ${DISTDIR}/libressl-${SSL}.tar.gz ${EXTRACT_AFTER_ARGS})
 	@(cd ${WRKDIR}/libressl-${SSL} && ${SETENV} ac_cv_header_endian_h=no ./configure && ${SETENV} ${MAKE_ENV} ${MAKE})
 	@(cd ${WRKSRC_libimsg} && ${SETENV} ${MAKE_ENV} ${MAKE})
