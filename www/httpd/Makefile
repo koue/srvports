@@ -1,4 +1,4 @@
-PORTNAME=	obhttpd
+PORTNAME=	httpd
 DISTVERSION=	7.8.20260205
 CATEGORIES=	www
 MASTER_SITES=	OPENBSD/LibreSSL:libressl
@@ -20,7 +20,7 @@ GH_PROJECT=	httpd \
 GH_TAGNAME=	${LIBIMSG}:libimsg \
 		${LIBEVENT}:libevent
 
-USE_RC_SUBR=	obhttpd
+USE_RC_SUBR=	httpd
 
 MAKE_ARGS+=	MANDIR=${PREFIX}/share/man/man
 
@@ -40,32 +40,22 @@ SSL=		4.2.1
 LIBEVENT=	7.3.20230714
 LIBIMSG=	7.3.20230714
 
-post-patch:
-	${REINPLACE_CMD} -e 's|libimsg/src||g' \
-			 -e 's|libevent||g' ${WRKSRC}/Makefile
-	${REINPLACE_CMD} -e 's|httpd$$|obhttpd|g' \
-			 -e 's|httpd.conf.5|obhttpd.conf.5|g' \
-			 -e 's|httpd.8|obhttpd.8|g' ${WRKSRC}/src/usr.sbin/httpd/Makefile
-	${REINPLACE_CMD} -e 's|htpasswd$$|obhtpasswd|g' \
-			 -e 's|htpasswd.1|obhtpasswd.1|g' ${WRKSRC}/src/usr.bin/htpasswd/Makefile
-	${MV} ${WRKSRC}/src/usr.bin/htpasswd/htpasswd.1 ${WRKSRC}/src/usr.bin/htpasswd/obhtpasswd.1
-	${MV} ${WRKSRC}/src/usr.sbin/httpd/httpd.conf.5 ${WRKSRC}/src/usr.sbin/httpd/obhttpd.conf.5
-	${MV} ${WRKSRC}/src/usr.sbin/httpd/httpd.8 ${WRKSRC}/src/usr.sbin/httpd/obhttpd.8
-	${REINPLACE_CMD} -e 's|/etc/httpd.conf|${PREFIX}/etc/obhttpd.conf|g' \
-		${WRKSRC}/src/usr.sbin/httpd/httpd.h
-
 post-extract:
 	@(cd ${WRKDIR} && ${EXTRACT_CMD} ${EXTRACT_BEFORE_ARGS} ${DISTDIR}/libressl-${SSL}.tar.gz ${EXTRACT_AFTER_ARGS})
 	@(cd ${WRKDIR}/libressl-${SSL} && ${SETENV} ac_cv_header_endian_h=no ./configure && ${SETENV} ${MAKE_ENV} ${MAKE})
 	@(cd ${WRKSRC_libimsg} && ${SETENV} ${MAKE_ENV} ${MAKE})
 	@(cd ${WRKSRC_libevent} && ${SETENV} ${MAKE_ENV} ${MAKE})
 
+post-patch:
+	${REINPLACE_CMD} -e 's|libimsg/src||g' \
+			 -e 's|libevent||g' ${WRKSRC}/Makefile
+
 post-install:
 	${INSTALL_DATA} ${WRKSRC}/src/etc/examples/httpd.conf \
-		${STAGEDIR}${PREFIX}/etc/obhttpd.conf.sample
+		${STAGEDIR}${PREFIX}/etc/httpd.conf.sample
 
 do-test:
 	@cd ${WRKSRC}/src/regress/usr.sbin/httpd/tests && \
-		HTTPD=../../../../usr.sbin/httpd/obhttpd make
+		HTTPD=../../../../usr.sbin/httpd/httpd make
 
 .include <bsd.port.mk>
