@@ -12,6 +12,7 @@ FILES="
 	Mk/bsd.default-versions.mk
 	Mk/bsd.commands.mk
 	Mk/bsd.licenses.db.mk
+	Mk/bsd.options.desc.mk
 	Mk/Features/ssp.mk
 	Mk/Uses/gmake.mk
 	Mk/Uses/ssl.mk
