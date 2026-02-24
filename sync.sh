@@ -14,6 +14,7 @@ FILES="
 	Mk/bsd.licenses.db.mk
 	Mk/Features/ssp.mk
 	Mk/Uses/gmake.mk
+	Mk/Uses/ssl.mk
 	Mk/Uses/tar.mk
 	Mk/Uses/uidfix.mk
 	Mk/Scripts/check-vulnerable.sh

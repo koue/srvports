@@ -58,13 +58,13 @@ FPC_DEFAULT?=		3.2.3
 .  endif
 # Possible values: 12, 13, 14, 15, 16
 # (Any other version is completely unsupported and not meant for general use.)
-GCC_DEFAULT?=		13
+GCC_DEFAULT?=		14
 # Possible values: 10
 GHOSTSCRIPT_DEFAULT?=	10
 # Possible values: mesa-libs, mesa-devel
 GL_DEFAULT?=		mesa-libs
-# Possible values: 1.20, 1.21, 1.22, 1.23, 1.24, 1.25, 1.26-devel
-GO_DEFAULT?=		1.24
+# Possible values: 1.24, 1.25, 1.26
+GO_DEFAULT?=		1.25
 # Possible values: 1.8, 2.2, 3.0
 GUILE_DEFAULT?=		2.2
 # Possible versions: 6, 7
@@ -73,13 +73,13 @@ GUILE_DEFAULT?=		2.2
 # Format:	     version[-flavor]
 # Examples:	     6-nox11, 7
 IMAGEMAGICK_DEFAULT?=	7
-# Possible values: 8, 11, 17, 18, 19, 20, 21, 22, 23, 24, 25
+# Possible values: 8, 11, 17, 20, 21, 22, 23, 24, 25
 JAVA_DEFAULT?=		8
-# Possible values: 4.2, 4.99
+# Possible values: 4.4, 4.99
 .  if (defined(WANT_LAZARUS_DEVEL) && !empty(WANT_LAZARUS_DEVEL)) || ${ARCH:Maarch64}
 LAZARUS_DEFAULT?=	4.99
 .  else
-LAZARUS_DEFAULT?=	4.2
+LAZARUS_DEFAULT?=	4.4
 .  endif
 # Possible values: rust, legacy
 .  if empty(ARCH:Naarch64:Namd64:Narmv7:Ni386:Npowerpc64:Npowerpc64le:Npowerpc:Nriscv64)
@@ -93,7 +93,7 @@ LINUX_DEFAULT?=		c7
 .  else
 LINUX_DEFAULT?=		rl9
 .  endif
-# Possible values: 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, -devel (to be used when non-base compiler is required)
+# Possible values: 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, -devel (to be used when non-base compiler is required)
 LLVM_DEFAULT?=		19
 # Possible values: 5.1, 5.2, 5.3, 5.4
 LUA_DEFAULT?=		5.4
@@ -105,7 +105,7 @@ LUAJIT_DEFAULT?=	luajit
 .  endif
 # Possible values: 5.10, 5.20, 6.8
 MONO_DEFAULT?=		5.20
-# Possible values: 8.0, 8.4, 9.1, 9.4, 10.6m, 10.11m, 11.4m, 11.8m
+# Possible values: 8.0, 8.4, 9.1, 9.4, 9.6, 10.6m, 10.11m, 11.4m, 11.8m
 MYSQL_DEFAULT?=		8.0
 # Possible values: ninja, samurai
 NINJA_DEFAULT?=		ninja
@@ -132,8 +132,8 @@ PERL5_DEFAULT:=		${_PERL5_FROM_BIN:R}
 .  endif
 # Possible values: 13, 14, 15, 16, 17, 18
 PGSQL_DEFAULT?=		17
-# Possible values: 8.1, 8.2, 8.3, 8.4, 8.5
-PHP_DEFAULT?=		8.3
+# Possible values: 8.2, 8.3, 8.4, 8.5
+PHP_DEFAULT?=		8.4
 # Possible values: rust, legacy
 .  if empty(ARCH:Naarch64:Namd64:Narmv7:Ni386:Npowerpc64:Npowerpc64le:Npowerpc:Nriscv64)
 PYCRYPTOGRAPHY_DEFAULT?=	rust
@@ -144,11 +144,11 @@ PYCRYPTOGRAPHY_DEFAULT?=	legacy
 PYTHON_DEFAULT?=	3.11
 # Possible values: 2.7
 PYTHON2_DEFAULT?=	2.7
-# Possible values: 3.2, 3.3, 3.4, 3.5
+# Possible values: 3.2, 3.3, 3.4, 4.0
 RUBY_DEFAULT?=		3.3
 # Possible values: rust, rust-nightly
 RUST_DEFAULT?=		rust
-# Possible values: 4.16, 4.19, 4.20, 4.22
+# Possible values: 4.16, 4.19, 4.20, 4.22, 4.23
 SAMBA_DEFAULT?=		4.16
 # When updating this, please also update the same list in ssl.mk and the checks
 # for USES=ssl in qa.sh!
