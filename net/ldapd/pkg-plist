@@ -1,0 +1,8 @@
+sbin/ldap
+sbin/ldapctl
+sbin/ldapd
+%%ETCDIR%%.conf.sample
+share/man/man1/ldap.1.gz
+share/man/man5/ldapd.conf.5.gz
+share/man/man8/ldapctl.8.gz
+share/man/man8/ldapd.8.gz
