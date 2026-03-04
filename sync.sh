@@ -33,6 +33,7 @@ FILES="
 	Mk/Scripts/security-check.awk
 	Mk/Scripts/find-lib.sh
 	Mk/Scripts/do-users-groups.sh
+	Mk/Scripts/smart_makepatch.sh
 	Templates/BSD.local.dist
 	Templates/config.guess
 	Templates/config.sub
