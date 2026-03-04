@@ -1,0 +1,11 @@
+--- src/statgrab/Makefile.in.orig	2026-03-04 00:26:31 UTC
++++ src/statgrab/Makefile.in
+@@ -693,7 +693,7 @@ install-dvi-am:
+ 
+ install-dvi-am:
+ 
+-install-exec-am: install-binPROGRAMS install-binSCRIPTS \
++install-exec-am: install-binPROGRAMS \
+ 	install-exec-local
+ 
+ install-html: install-html-am

@@ -1,0 +1,12 @@
+--- docs/statgrab/Makefile.in.orig	2026-03-04 00:25:56 UTC
++++ docs/statgrab/Makefile.in
+@@ -313,8 +313,7 @@ top_srcdir = @top_srcdir@
+ top_build_prefix = @top_build_prefix@
+ top_builddir = @top_builddir@
+ top_srcdir = @top_srcdir@
+-@MANPAGES_TRUE@@STATGRAB_TRUE@man_MANS = statgrab.1 statgrab-make-mrtg-config.1 \
+-@MANPAGES_TRUE@@STATGRAB_TRUE@	   statgrab-make-mrtg-index.1
++@MANPAGES_TRUE@@STATGRAB_TRUE@man_MANS = statgrab.1
+ 
+ @MANPAGES_TRUE@EXTRA_DIST = $(man_MANS)
+ @BUILD_MANPAGES_TRUE@MAINTAINERCLEANFILES = $(man_MANS)
