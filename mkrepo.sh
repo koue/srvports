@@ -8,3 +8,4 @@ done
 
 pkg repo ${REPOPATH}/
 cp index.html ${REPOPATH}/
+cp distfiles/* ${REPOPATH}/distfiles/
