@@ -1,6 +1,6 @@
 PORTNAME=	slowcgi
 PORTVERSION=	7.1.20220916
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	www
 
 MAINTAINER=	koue@chaosophia.net
@@ -10,6 +10,9 @@ WWW=		https://github.com/koue/slowcgi
 LICENSE=	BSD3CLAUSE
 
 LIB_DEPENDS=	libevent.so:devel/libevent
+LIB_DIRS+=	/usr/local/lib
+CFLAGS+=	-I/usr/local/include
+LDFLAGS+=	-L/usr/local/lib
 
 USES=		uidfix
 
