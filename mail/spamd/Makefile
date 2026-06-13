@@ -10,6 +10,10 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	koue
 GH_PROJECT=	spamd
 
+LIB_DIRS+=      /usr/local/lib
+CFLAGS+=        -I/usr/local/include
+LDFLAGS+=       -L/usr/local/lib
+
 USE_RC_SUBR=	obspamd
 
 USERS=		_spamd
