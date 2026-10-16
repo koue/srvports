@@ -25,6 +25,7 @@ USE_PYTHON=	pep517 autoplist
 NO_ARCH=	yes
 
 do-test:
+	# TODO: currently fails because of extra modules in nltk
 	python3.12 files/runtests.py ${STAGEDIR}/srv/lib/python3.12/site-packages
 
 .include <bsd.port.mk>
