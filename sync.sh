@@ -36,6 +36,7 @@ FILES="
 	Mk/Scripts/find-lib.sh
 	Mk/Scripts/do-users-groups.sh
 	Mk/Scripts/smart_makepatch.sh
+	Mk/Scripts/strip_RECORD.py
 	Templates/BSD.local.dist
 	Templates/config.guess
 	Templates/config.sub
