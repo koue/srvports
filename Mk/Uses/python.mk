@@ -346,7 +346,10 @@ ZEROREGS_UNSAFE=	yes
 # Mk/bsd.default-versions.mk in sync.
 _PYTHON_VERSIONS=		3.12 3.13 3.13t 3.14 3.14t 3.11 3.15 2.7 # preferred first
 _PYTHON_PORTBRANCH=		3.12		# ${_PYTHON_VERSIONS:[1]}
-_PYTHON_BASECMD=		${LOCALBASE}/bin/python
+# <SRVPORTS>
+#_PYTHON_BASECMD=		${LOCALBASE}/bin/python
+_PYTHON_BASECMD=		/usr/local/bin/python
+# </SRVPORTS>
 _PYTHON_RELPORTDIR=		lang/python
 
 # List all valid USE_PYTHON features here

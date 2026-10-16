@@ -1,0 +1,30 @@
+PORTNAME=	nltk
+DISTVERSION=	3.10.0
+PORTEPOCH=	2
+CATEGORIES=	textproc python
+MASTER_SITES=	PYPI
+PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
+
+MAINTAINER=	koue@chaosophia.net
+COMMENT=	Natural language toolkit written in python
+WWW=		https://www.nltk.org/
+
+LICENSE=	APACHE20
+
+BUILD_DEPENDS=	${PY_SETUPTOOLS} \
+		${PYTHON_PKGNAMEPREFIX}wheel>0:devel/py-wheel@${PY_FLAVOR}
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}click>0:devel/py-click@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}defusedxml>0:devel/py-defusedxml@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}joblib>0:devel/py-joblib@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}regex>0:textproc/py-regex@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}tqdm>0:misc/py-tqdm@${PY_FLAVOR} \
+
+USES=		cpe python
+USE_PYTHON=	pep517 autoplist
+
+NO_ARCH=	yes
+
+do-test:
+	python3.12 files/runtests.py ${STAGEDIR}/srv/lib/python3.12/site-packages
+
+.include <bsd.port.mk>
