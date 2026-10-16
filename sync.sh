@@ -14,7 +14,9 @@ FILES="
 	Mk/bsd.licenses.db.mk
 	Mk/bsd.options.desc.mk
 	Mk/Features/ssp.mk
+	Mk/Uses/cpe.mk
 	Mk/Uses/gmake.mk
+	Mk/Uses/python.mk
 	Mk/Uses/ssl.mk
 	Mk/Uses/tar.mk
 	Mk/Uses/uidfix.mk
@@ -43,11 +45,14 @@ FILES="
 "
 ###
 myfetch() {
+	mkdir -p `dirname ${1}`
 	fetch -o ${1} ${RAWURL}/${1}
 }
 
-for F in ${FILES}
-do
-	mkdir -p `dirname ${F}`
-	myfetch ${F}
-done
+if [ ! -z "${1}" ]; then
+	myfetch "${1}"
+else
+	for F in ${FILES}; do
+		myfetch ${F}
+	done
+fi
