@@ -6,6 +6,6 @@ for path in $(find . -type d -name pkg); do
 	cp -v ${path}/* ${REPOPATH}/
 done
 
-pkg repo ${REPOPATH}/
+pkg repo -l ${REPOPATH}/
 cp index.html ${REPOPATH}/
 cp distfiles/* ${REPOPATH}/distfiles/
